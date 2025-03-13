@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tkmkq2zal-nodejs-gitops
+  description: This is GitOps manifest for tkmkq2zal-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=tkmkq2zal-nodejs
+    backstage.io/kubernetes-id: tkmkq2zal-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: tkmkq2zal-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tkmkq2zal-nodejs
